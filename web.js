@@ -1,12 +1,12 @@
 var express = require('express');
 var app = express();
-var buffer = new buffer();
+var buffer = new buffer(27);
 var fs = require('fs');
-var fichero = "index.txt"
+var fichero = 'index.txt';
 app.use(express.logger());
 
 app.get('/', function(request, response) {
-  buffer = fs.readFileSync(fichero, buffer);
+  fs.readFileSync(fichero, buffer);
   response.send(buffer.toString(buffer));
 });
 
