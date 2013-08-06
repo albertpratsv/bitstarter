@@ -5,9 +5,11 @@ var fs = require('fs');
 var fichero = 'index.txt';
 app.use(express.logger());
 
+fs.readFileSync(fichero,buffer);
+buffer.toString('utf8',0,buffer.length());
+
 app.get('/', function(request, response) {
-  fs.readFileSync(fichero, buffer);
-  response.send(buffer.toString('utf8',0,buffer.length()));
+  response.send(buffer);
 });
 
 var port = process.env.PORT || 5000;
