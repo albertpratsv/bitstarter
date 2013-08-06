@@ -6,10 +6,10 @@ var fichero = 'index.txt';
 app.use(express.logger());
 
 fs.readFileSync(fichero,buffer);
-buffer.toString('utf8',0,buffer.length());
+var k = buffer.toString('utf8');
 
 app.get('/', function(request, response) {
-  response.send(buffer);
+  response.send(k);
 });
 
 var port = process.env.PORT || 5000;
